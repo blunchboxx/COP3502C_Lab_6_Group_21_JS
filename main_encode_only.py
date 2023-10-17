@@ -1,3 +1,5 @@
+# Jason Schinis COP3502C Lab 06 Encode Function File
+
  def print_menu():  # Function to print menu
 
     # Menu options
