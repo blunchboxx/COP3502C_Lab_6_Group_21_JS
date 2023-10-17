@@ -1,4 +1,4 @@
-def print_menu():  # Function to print menu
+ def print_menu():  # Function to print menu
 
     # Menu options
     print('Menu\n'
@@ -12,13 +12,13 @@ def encode(original_password):  # Function to take user input password and encod
 
     encoded_password = ''
 
-    for char in original_password:
+    for char in original_password:  # Iterate through each character in input password
 
-        char = int(char)
+        char = int(char)  # Convert string user input character to integer
 
-        new_char = char + 3
+        new_char = char + 3  # Encode each character in password per assignment formula
 
-        encoded_password += str(new_char)
+        encoded_password += str(new_char)  # Add encoded character to new encoded password string
 
     return encoded_password
 
