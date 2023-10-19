@@ -74,6 +74,16 @@ def main():  # Main program function definition
 
             print('Your password has been encoded and stored!\n')
 
+        elif menu_selection == 2:  # Menu option 2 - Decode function - to be implemented by lab partner
+
+            try:
+
+                raise NotImplementedError
+
+            except NotImplementedError as error:
+
+                print("Decode function not implemented yet.\n")
+
 
 if __name__ == '__main__':  # Main Program
 
