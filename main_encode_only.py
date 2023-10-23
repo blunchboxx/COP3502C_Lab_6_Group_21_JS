@@ -27,20 +27,20 @@ def encode(original_password):  # Function to take user input password and encod
 
 def main():  # Main program function definition
 
-    while True:
+    while True:  # Loop to keep requesting user input until quit is selected
 
         print_menu()
 
-        user_input_valid = False
+        user_input_valid = False  # Set sentinel value for input validation loop to False
 
-        while user_input_valid is False:
+        while user_input_valid is False:  # Loop to check if user menu selection input is valid
 
             try:
 
                 menu_selection = int(input("Please enter an option: "))
-                user_input_valid = True
+                user_input_valid = True  # If no error from user input, exit loop and continue program execution
 
-            except ValueError as error:
+            except ValueError as error:  # If input error occurs, display error message and request input again
 
                 print('ValueError detected: ', str(error))
 
@@ -52,9 +52,9 @@ def main():  # Main program function definition
 
         elif menu_selection == 1:  # Option 1 encode branch
 
-            password_valid = False
+            password_valid = False  # Set sentinel value for password input validation loop
 
-            while password_valid is False:
+            while password_valid is False:  # Loop to validate password input
 
                 try:
 
@@ -62,19 +62,19 @@ def main():  # Main program function definition
 
                     int(unencrypted_password)
 
-                    password_valid = True
+                    password_valid = True  # If input password returns no errors, exit loop and continue program exec.
 
-                except ValueError as excpt:
+                except ValueError as excpt:  # If error occurs, display error message and request input again
 
                     print('ValueError detected: ', str(excpt))
 
                     print('Invalid selection. Please enter a password with numbers only.\n')
 
-            encrypted_password = encode(unencrypted_password)
+            encrypted_password = encode(unencrypted_password)  # Call encode function, pass user input and store result
 
             print('Your password has been encoded and stored!\n')
 
-        elif menu_selection == 2:  # Menu option 2 - Decode function - to be implemented by lab partner
+        elif menu_selection == 2:  # Menu option 2 - Decode function - FIXME - Lewis, implement Decode here
 
             try:
 
