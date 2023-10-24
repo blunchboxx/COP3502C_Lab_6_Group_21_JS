@@ -24,6 +24,20 @@ def encode(original_password):  # Function to take user input password and encod
 
     return encoded_password
 
+def decode(encoded_password):
+
+    original_password = ''
+
+    for char in encoded_password:
+
+        char = int(char)
+
+        new_char = char - 3
+
+        original_password += str(new_char)
+
+    return original_password
+
 
 def main():  # Main program function definition
 
@@ -74,15 +88,22 @@ def main():  # Main program function definition
 
             print('Your password has been encoded and stored!\n')
 
-        elif menu_selection == 2:  # Menu option 2 - Decode function - FIXME - Lewis, implement Decode here
+        elif menu_selection == 2:  # Option 2 decode branch
 
             try:
+
+                unencrypted_password = decode(encrypted_password)
+
+                print(f'The encoded password is ' + encrypted_password + ', '
+                      'and the original password is ' + unencrypted_password + '.')
 
                 raise NotImplementedError
 
             except NotImplementedError as error:
 
-                print("Decode function not implemented yet.\n")
+                print('ValueError detected: ', str(error))
+
+                print('Something is wrong with the stored password.\n')
 
 
 if __name__ == '__main__':  # Main Program
