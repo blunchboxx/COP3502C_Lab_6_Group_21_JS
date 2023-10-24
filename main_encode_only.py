@@ -18,11 +18,18 @@ def encode(original_password):  # Function to take user input password and encod
 
         char = int(char)  # Convert string user input character to integer
 
-        new_char = char + 3  # Encode each character in password per assignment formula
+        new_char = str(char + 3)  # Encode each character in password per assignment formula
 
-        encoded_password += str(new_char)  # Add encoded character to new encoded password string
+        if len(new_char) == 1:
+            encoded_password += new_char  # Add encoded character to new encoded password string
+
+        else:
+
+            # Add last digit of encoded value to encoded password string
+            encoded_password += new_char[len(new_char) - 1]
 
     return encoded_password
+
 
 def decode(encoded_password):
 
@@ -32,9 +39,26 @@ def decode(encoded_password):
 
         char = int(char)
 
-        new_char = char - 3
+        if 3 <= char <= 9:
 
-        original_password += str(new_char)
+            new_char = char - 3
+
+            original_password += str(new_char)
+
+        elif char == 2:
+
+            new_char = 9
+            original_password += str(new_char)
+
+        elif char == 1:
+
+            new_char = 8
+            original_password += str(new_char)
+
+        elif char == 0:
+
+            new_char = 7
+            original_password += str(new_char)
 
     return original_password
 
@@ -96,8 +120,6 @@ def main():  # Main program function definition
 
                 print(f'The encoded password is ' + encrypted_password + ', '
                       'and the original password is ' + unencrypted_password + '.')
-
-                raise NotImplementedError
 
             except NotImplementedError as error:
 
